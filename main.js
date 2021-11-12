@@ -68,25 +68,19 @@ function zobrazFoto() {
 }
 
 function fotoVpred() {
-    //if (p < obrazky.length - 1) {
-    //if ((sipka.getAttribute('src') == "obrazky/sipka-vpravo.svg") && (p < (obrazky.length - 1))) {
     p++;
     if (p == obrazky.length) {
         p = 0;
     }
     zobrazFoto();
-    //}
 }
 
 function fotoZpet() {
-    //if (p != 0) {
-    //if ((sipka.getAttribute('src') == "obrazky/sipka-vlevo.svg") && p != 0) {
     p--;
     if (p < 0) {
         p = 5;
     }
     zobrazFoto();
-    //}
 }
 
 /*
@@ -94,6 +88,5 @@ Bonusový úkol:
 ==============
 
 Tlačítka předchozí/následující nahraď malým náhledem dalšího/
-předcházejícího obrázku. Všechny tři obrázky (velký aktuální a malý předchozí/následující se samozřejmě budou měnit adekvátně tomu, jak procházíš
-galerií.
+předcházejícího obrázku. Všechny tři obrázky (velký aktuální a malý předchozí/následující se samozřejmě budou měnit adekvátně tomu, jak procházíš galerií.
 */
