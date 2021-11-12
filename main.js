@@ -53,29 +53,32 @@ let obrazky = [
 ];
 let fotka = document.querySelector("#foto");
 let popisek = document.querySelector("#pocitadlo");
-let sipka = document.querySelector(".sipka");
+let sipkaL = document.querySelector(".sipka__vlevo");
+let sipkaP = document.querySelector(".sipka__vpravo");
 let p = 0;
-fotka.addEventListener("click", zobrazFoto)
-fotka.src = "obrazky/kocka.jpg"
-popisek.textContent = "kocka.jpg - 0 / " + obrazky.length
 
-sipka.addEventListener("click", posunFoto)
+zobrazFoto();
+
+sipkaP.addEventListener("click", fotoVpred)
+sipkaL.addEventListener("click", fotoZpet)
 
 function zobrazFoto() {
-    if (p < (obrazky.length - 1)) {
+    fotka.src = "obrazky/" + obrazky[p];
+    popisek.textContent = obrazky[p] + " - " + p + " / " + obrazky.length
+}
 
-        fotka.src = "obrazky/" + obrazky[p + 1]
-        popisek.textContent = obrazky[p + 1] + " - " + (p + 1) + " / " + obrazky.length
-        p++
+function fotoVpred() {
+    if (p < obrazky.length - 1) {
+        //if ((sipka.getAttribute('src') == "obrazky/sipka-vpravo.svg") && (p < (obrazky.length - 1))) {
+        p++;
+        zobrazFoto();
     }
 }
 
-
-
-
-
-/*
-Tvoříš galerii obrázků. Seznam obrázků máš uložený v poli obrazky[].
-Z celé galerie je vidět vždy jen jeden obrázek.
-Na stránce jsou tlačítka "Předchozí" a "Další"- při stisknutí tlačítka zobraz předchozí/následující obrázek (nahraď zdroj "src" obrázku jménem nového obrázku).
-*/
+function fotoZpet() {
+    if (p != 0) {
+        //if ((sipka.getAttribute('src') == "obrazky/sipka-vlevo.svg") && p != 0) {
+        p--;
+        zobrazFoto();
+    }
+}
