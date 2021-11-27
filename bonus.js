@@ -23,23 +23,6 @@ Tlačítka předchozí/následující nahraď malým náhledem dalšího/
 předcházejícího obrázku. Všechny tři obrázky (velký aktuální a malý
 předchozí/následující se samozřejmě budou měnit adekvátně tomu, jak procházíš
 galerií.
-
-
-Extra bonus:
-============================
-Na konec stránky přidej proužek, kde budou malé náhledy všech obrázků
-v galerii. Aktuální obrázek bude vždy nějakým způsobem zvýrazněn.
-
-Co musíš udělat:
-- doplnit do HTML značku, do které pak JavaScriptem vygeneruješ seznam obrázků
-- trochu CSS, aby to nevypadalo úplně příšerně. Pokud CSS neovládáš tak dobře,
-netrap se tím - jde nám hlavně o JavaScript. Případně se zeptej na Facebooku
-a my ti rádi připravíme CSS na míru tvému řešení úkolu.
-- při startu stránky musíš do svého nového HTML prvku vygenerovat seznam
-všech obrázků v galerii
-- aktuální obrázek zvýraznit - např. přidáním nějaké třídy s červeným rámečkem
-nebo něco podobného
-- při změně obrázku odstranit zvýraznění z předchozího obrázku a zvýraznit nový
 */
 
 
@@ -64,13 +47,13 @@ sipkaL.addEventListener("click", fotoZpet)
 
 function zobrazFoto() {
     fotka.src = "obrazky/" + obrazky[p];
-    popisek.textContent = obrazky[p] + " - " + (p + 1) + " / " + obrazky.length;
+    popisek.textContent = obrazky[p] + " - " + p + " / " + obrazky.length;
     nahled();
 }
 
 function fotoVpred() {
     p++;
-    if (p === obrazky.length) {
+    if (p == obrazky.length) {
         p = 0;
     }
     zobrazFoto();
@@ -98,16 +81,3 @@ function nahled() {
         sipkaL.src = "obrazky/" + obrazky[obrazky.length - 1];
     }
 }
-
-/*
-Extra bonus:
-============================
-Na konec stránky přidej proužek, kde budou malé náhledy všech obrázků v galerii. Aktuální obrázek bude vždy nějakým způsobem zvýrazněn.
-
-Co musíš udělat:
-- doplnit do HTML značku, do které pak JavaScriptem vygeneruješ seznam obrázků
-- trochu CSS, aby to nevypadalo úplně příšerně. Pokud CSS neovládáš tak dobře, netrap se tím - jde nám hlavně o JavaScript. Případně se zeptej na Facebooku a my ti rádi připravíme CSS na míru tvému řešení úkolu.
-- při startu stránky musíš do svého nového HTML prvku vygenerovat seznam všech obrázků v galerii
-- aktuální obrázek zvýraznit - např. přidáním nějaké třídy s červeným rámečkem nebo něco podobného
-- při změně obrázku odstranit zvýraznění z předchozího obrázku a zvýraznit nový
-*/
